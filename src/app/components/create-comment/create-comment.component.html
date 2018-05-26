@@ -1,0 +1,39 @@
+<form (ngSubmit)="createComment(form.value)" #form="ngForm">
+
+    <h4>Create Comment</h4>
+  
+    <div class="form-group">
+      <label for="">Status</label>
+        <select name="is_active" id="" class="form-control" ngModel>
+            <option value="0">disActive</option>
+            <option value="1">Active</option>
+        </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="">User</label>
+        <select name="user_id" id="" class="form-control" ngModel>
+            <option value="">Choose</option>
+            <option value="{{ user._id }}" *ngFor="let user of users">{{ user.email }}</option>
+        </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="">Article</label>
+        <select name="article_id" id="" class="form-control" ngModel>
+            <option value="0">Choose</option>
+            <option value="{{ article._id }}" *ngFor="let article of articles">{{ article.title }}</option>
+        </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="">Body</label>
+        <textarea name="body" rows="7" class="form-control" ngModel></textarea>
+    </div>
+  
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Create</button>
+    </div>
+  
+  
+  </form>

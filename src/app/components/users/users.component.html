@@ -1,0 +1,27 @@
+<span> <a href="#" routerLink="/users/create" class="btn btn-info">Create New User</a></span>
+<br><br>
+
+<table class="table table-bordered table-hover">
+  <thead> 
+    <th>Id</th>
+    <th>Status</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Edit</th>
+    <th>Remove</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user._id }}</td>
+      <td>{{ user.is_active ? 'Active' : 'Disctive' }}</td>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>{{ user.email }}</td>
+      <td><a href="#" routerLink="/users/edit/{{user._id}}" class="btn btn-info btn-sm">Edit</a></td>
+      <td><a href="#" class="btn btn-danger btn-sm">Remove</a></td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>
+

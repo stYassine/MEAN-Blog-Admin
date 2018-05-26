@@ -1,0 +1,24 @@
+<span> <a href="#" routerLink="/comments/create" class="btn btn-info">Create New Comment</a></span>
+<br><br>
+<table class="table table-bordered table-hover">
+    <thead> 
+      <th>Id</th>
+      <th>Status</th>
+      <th>User Id</th>
+      <th>Article Id</th>
+      <th>Edit</th>
+      <th>Remove</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let comment of comments">
+        <td>{{ comment._id }}</td>
+        <td>{{ comment.is_active ? 'Active' : 'Disactive' }}</td>
+        <td>{{ comment.user_id }}</td>
+        <td>{{ comment.article_id }}</td>
+        <td><a href="#" routerLink="comments/edit/{{comment._id}}" class="btn btn-info btn-sm">Edit</a></td>
+        <td><button (click)="deleteComment(comment._id)" class="btn btn-danger btn-sm">Remove</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+<router-outlet></router-outlet>

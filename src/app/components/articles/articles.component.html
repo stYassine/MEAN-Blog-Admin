@@ -1,0 +1,26 @@
+<span> <a href="#" routerLink="/articles/create" class="btn btn-info">Create New Article</a></span>
+<br><br>
+<table class="table table-bordered table-hover">
+    <thead> 
+      <th>Id</th>
+      <th>Status</th>
+      <th>User</th>
+      <th>Category</th>
+      <th>Title</th>
+      <th>Edit</th>
+      <th>Remove</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let article of articles">
+          <td>{{ article._id }}</td>
+          <td>{{ article.is_active ? 'Active' : 'Disactive' }}</td>
+          <td>user</td>
+          <td>category</td>
+          <td>{{ article.title }}</td>
+          <td><a href="" class="btn btn-info btn-sm">Edit</a></td>
+          <td><button (click)="deleteArticle(article._id)" class="btn btn-danger btn-sm">Remove</button></td>
+        </tr>
+    </tbody>
+  </table>
+
+  <router-outlet></router-outlet>

@@ -1,0 +1,38 @@
+<form (ngSubmit)="createUser(form)" #form="ngForm">
+
+    <h4>Create User</h4>
+  
+    <div class="form-group">
+      <label for="">Status</label>
+        <select name="is_active" id="" class="form-control" ngModel>
+            <option value="0">disActive</option>
+            <option value="1">Active</option>
+        </select>
+    </div>
+  
+    <div class="form-group">
+      <label for="">First Name</label>
+        <input type="text" name="first_name" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label for="">Last Name</label>
+        <input type="text" name="last_name" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label for="">Email</label>
+        <input type="email" name="email" class="form-control" ngModel>
+    </div>
+
+    <div class="form-group">
+      <label for="">Password</label>
+        <input type="password" name="password" class="form-control" ngModel>
+    </div>
+  
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Create</button>
+    </div>
+  
+  
+  </form>
